@@ -1,0 +1,19 @@
+{
+  "name": "served_hot",
+  "version": "1.0.0",
+  "description": "hospitality site",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amStevee/ServedHot.git"
+  },
+  "author": "steven anongo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amStevee/ServedHot/issues"
+  },
+  "homepage": "https://github.com/amStevee/ServedHot#readme"
+}

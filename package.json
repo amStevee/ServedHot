@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/amStevee/ServedHot/issues"
   },
-  "homepage": "https://github.com/amStevee/ServedHot#readme"
+  "homepage": "https://github.com/amStevee/ServedHot#readme",
+  "dependencies": {
+    "node-sass": "^7.0.3"
+  }
 }

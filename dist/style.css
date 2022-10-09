@@ -1,0 +1,416 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 {
+  font-family: Arial Black;
+  color: #d92b04;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+h3 {
+  font-family: Arial;
+  color: #d92b04;
+}
+
+i {
+  cursor: pointer;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: rgba(140, 14, 3, 0.9);
+  color: #fff;
+  padding: 20px;
+  font-size: 1.1rem;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+}
+
+.navbar .logo {
+  margin-right: 50px;
+  font-family: Amperzand;
+}
+
+.navbar .list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+}
+
+.navbar #toggler,
+.navbar label {
+  display: none;
+}
+
+header {
+  height: 70vh;
+  background-image: url("../image/blur_background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+header .searchError {
+  display: none;
+}
+
+header .search_restaurants {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  color: #fff;
+  font-family: Berlin Sans FB;
+  position: absolute;
+  top: 39%;
+  left: 45%;
+  -webkit-transform: translate(-39%, -45%);
+          transform: translate(-39%, -45%);
+  z-index: 3;
+}
+
+header .search_restaurants .search {
+  width: 300px;
+  height: 40px;
+  margin: 20px;
+  background-color: #fff;
+  border: none;
+  border-radius: 20px;
+}
+
+header .search_restaurants .search button {
+  border: none;
+  outline: none;
+  background: transparent;
+  margin-left: 5px;
+  padding-left: 5px;
+}
+
+header .search_restaurants .search input {
+  width: 270px;
+  height: inherit;
+  border-radius: inherit;
+  border: none;
+  outline: none;
+  padding-left: 5px;
+}
+
+header .search_restaurants .search input::-webkit-input-placeholder {
+  padding: 5px;
+  padding-left: 5px;
+}
+
+header .search_restaurants .search input:-ms-input-placeholder {
+  padding: 5px;
+  padding-left: 5px;
+}
+
+header .search_restaurants .search input::-ms-input-placeholder {
+  padding: 5px;
+  padding-left: 5px;
+}
+
+header .search_restaurants .search input::placeholder {
+  padding: 5px;
+  padding-left: 5px;
+}
+
+main {
+  margin-top: 20px;
+  margin: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+main .top::-webkit-scrollbar {
+  color: #fff;
+}
+
+main .top::-webkit-scrollbar-track {
+  color: #fff;
+}
+
+main .top::-webkit-scrollbar-thumb {
+  color: #fff;
+}
+
+main .top {
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  background: none;
+  border-radius: 20px;
+}
+
+main .top .slides {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  -webkit-transition: all 750ms ease;
+  transition: all 750ms ease;
+}
+
+main .top .c {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-left: 10px;
+  height: 300px;
+  width: 300px;
+  scroll-snap-align: start;
+  scroll-behavior: smooth;
+}
+
+main .top .card {
+  position: relative;
+  color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+main .top .card img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+
+main .top .card_content {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px;
+  background-color: #d92b04;
+  border-top-left-radius: 20px;
+  -webkit-transform: translateY(70px);
+          transform: translateY(70px);
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
+}
+
+main .top .card_title {
+  color: #fff;
+  line-height: 15px;
+  z-index: 2;
+}
+
+main .top .card_subtitle {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  margin-top: 3px;
+}
+
+main .top .card_description {
+  font-size: 14px;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  width: 100%;
+  height: 7ch;
+  text-align: justify;
+  overflow: hidden;
+  white-space: wrap;
+  text-overflow: ellipsis;
+}
+
+main .top .card:hover .card_content {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+main .top .card:hover .card_description {
+  opacity: 1;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+main .advert {
+  padding: 20px;
+  width: 100%;
+}
+
+main .OPEN {
+  margin-top: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4fr 8fr;
+      grid-template-columns: 4fr 8fr;
+}
+
+main .isopen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  height: 150px;
+  line-height: 20px;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+main .isopen .isopen_content {
+  margin: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+main .isopen .isopen_content h4 {
+  color: #618c03;
+}
+
+main .isopen img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 40%;
+}
+
+main .nom {
+  display: none;
+}
+
+main .show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .fade {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search_restaurants {
+    position: absolute !important;
+    top: 40% !important;
+    left: 40% !important;
+    -webkit-transform: translate(-40%, -40%) !important;
+            transform: translate(-40%, -40%) !important;
+  }
+  .menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+  .list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 20px;
+  }
+  label {
+    display: -webkit-inline-box !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+  }
+  #toggler:checked ~ .menu {
+    max-height: 100%;
+  }
+  .c {
+    height: 200px !important;
+  }
+  .advert {
+    height: 50px;
+  }
+  .OPEN {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link
+      href="..//node_modules/@fortawesome/fontawesome-free/css/fontawesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../node_modules/@fortawesome/fontawesome-free/css/brands.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../node_modules/@fortawesome/fontawesome-free/css/solid.css"
+      rel="stylesheet"
+    />
+    <script>
+      var exports = {};
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDX7FdOv8T8OJxK-uK-0s1H5J-qEgLqHV0&libraries=places"></script>
+    <title>Served Hot</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="/" class="logo">Served Hot</a>
+      <input type="checkbox" id="toggler" />
+      <label for="toggler"><i class="fa-solid fa-bars"></i></label>
+      <div class="menu">
+        <ul class="list">
+          <li><a href="#top_rank">TOP RANK</a></li>
+          <li><a href="#currently_open">CURRENTLY OPEN</a></li>
+          <li><a href="#all_categories">ALL CATEGORIES</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <header>
+        <div class="bg_img"></div>
+        <div class="search_restaurants">
+          <h3 id="searchError" style="color: yellow; display: none">
+            <h3 id="demo" style="color: yellow"></h3>
+            Please enter a value
+          </h3>
+          <form class="search">
+            <button type="submit" id="search_button">
+              <i class="fa fa-magnifying-glass"></i>
+            </button>
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Abuja, London, Mumbai, New York..."
+            />
+          </form>
+
+          <h1>GET A LIST OF NICE RESTAURANT IN YOUR CITY</h1>
+        </div>
+      </header>
+
+      <!-- <div class="c">
+              <article class="card fade">
+                <img src="../image/header_background.jpg" alt="" />
+                <div class="card_content">
+                  <h3 class="card_title">GREEN POT</h3>
+                  <span class="card_subtitle">Address...</span>
+                  <p class="card_description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aliquam sunt recusandae voluptatum facilis ipsam minus
+                    numquam dolores, quam tempore eveniet.
+                  </p>
+                </div>
+              </article>
+            </div> -->
+      <main>
+        <h2 id="top_rank">TOP</h2>
+        <!-- class="top" id="top" -->
+        <section class="top">
+          <div class="slides" id="slides"></div>
+        </section>
+
+        <section class="OPEN" id="OPEN">
+          <div class="advert"><p>Advert x</p></div>
+          <div class="right">
+            <h2 id="currently_open">CURRENTLY OPEN</h2>
+            <div class="isopen">
+              <img src="../image/blur_background.jpg" alt="opened restaurant" />
+              <div class="isopen_content">
+                <h3>SANNDA</h3>
+                <p>Address: 16th jump street, Abuja</p>
+                <h4>OPEN</h4>
+              </div>
+            </div>
+            <div class="isopen">
+              <img src="../image/blur_background.jpg" alt="opened restaurant" />
+              <div class="isopen_content">
+                <h3>LEAF</h3>
+                <p>Address: 8080 leaf village street, Abuja</p>
+                <h4>OPEN</h4>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="all_categories">
+          <h2 id="currently_open">ALL CATEGORIES</h2>
+          <div class="isopen">
+            <img src="../image/blur_background.jpg" alt="opened restaurant" />
+            <div class="isopen_content">
+              <h3>SANNDA</h3>
+              <p>Address: 16th jump street, Abuja</p>
+              <h4>OPEN</h4>
+            </div>
+          </div>
+          <div class="isopen">
+            <img src="../image/blur_background.jpg" alt="opened restaurant" />
+            <div class="isopen_content">
+              <h3>SANNDA</h3>
+              <p>Address: 16th jump street, Abuja</p>
+              <h4>OPEN</h4>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="text/javascript" src="./bundle.js"></script>
+  </body>
+</html>

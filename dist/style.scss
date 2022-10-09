@@ -1,0 +1,348 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 {
+  font-family: Arial Black;
+  color: #d92b04;
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+h3 {
+  font-family: Arial;
+  color: #d92b04;
+}
+
+i {
+  cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(140, 14, 3, 0.9);
+  color: #fff;
+  padding: 20px;
+  font-size: 1.1rem;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+
+  .logo {
+    margin-right: 50px;
+    font-family: Amperzand;
+  }
+
+  .list {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+  }
+
+  #toggler,
+  label {
+    display: none;
+  }
+}
+
+// .container {
+//   width: 1024px;
+//   margin: auto;
+// }
+
+header {
+  height: 70vh;
+  background-image: url("../image/blur_background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+
+  .searchError {
+    display: none;
+  }
+
+  .search_restaurants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    color: #fff;
+    font-family: Berlin Sans FB;
+
+    position: absolute;
+    top: 39%;
+    left: 45%;
+    transform: translate(-39%, -45%);
+    z-index: 3;
+
+    .search {
+      width: 300px;
+      height: 40px;
+      margin: 20px;
+      background-color: #fff;
+      border: none;
+      border-radius: 20px;
+
+      button {
+        border: none;
+        outline: none;
+        background: transparent;
+        margin-left: 5px;
+        padding-left: 5px;
+      }
+
+      input {
+        width: 270px;
+        height: inherit;
+        border-radius: inherit;
+        border: none;
+        outline: none;
+        padding-left: 5px;
+      }
+
+      input::placeholder {
+        padding: 5px;
+        padding-left: 5px;
+      }
+    }
+  }
+}
+
+// box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+
+main {
+  margin-top: 20px;
+  margin: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  // TOP RANKED RESTAURANT SECTION
+
+  // .top::-webkit-scrollbar {
+  //   color: #fff;
+  // }
+
+  // .top::-webkit-scrollbar-track {
+  //   color: #000;
+  // }
+
+  // .top::-webkit-scrollbar-thumb {
+  //   color: #fff;
+  // }
+
+  .top {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    background: none;
+    border-radius: 20px;
+    .slides {
+      display: flex;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      transition: all 750ms ease;
+    }
+
+    .c {
+      display: flex;
+      flex-shrink: 0;
+      margin-left: 10px;
+      height: 300px;
+      width: 300px;
+      scroll-snap-align: start;
+      scroll-behavior: smooth;
+    }
+
+    .card {
+      position: relative;
+      color: #fff;
+      // background: url("/image/header_background.jpg") center no-repeat;
+      // background-size: cover;
+      border-radius: 20px;
+      overflow: hidden;
+      font-size: x-small;
+
+      img {
+        object-fit: contain;
+        width: 100%;
+      }
+    }
+
+    .card_content {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 3;
+      width: 100%;
+      height: 35%;
+      padding: 20px;
+      background-color: #d92b04;
+      border-top-left-radius: 20px;
+      transform: translateY(70px);
+      transition: transform 0.25s;
+    }
+
+    .card_title {
+      color: #fff;
+      line-height: 10px;
+      z-index: 2;
+    }
+
+    .card_subtitle {
+      display: block;
+      margin-bottom: 2px;
+      margin-top: 3px;
+    }
+
+    .card_description {
+      font-size: 0.5;
+      display: none;
+      transition: opacity 0.5s;
+      width: 100%;
+      height: 10ch;
+      text-align: justify;
+      overflow: hidden;
+      white-space: wrap;
+      text-overflow: ellipsis;
+    }
+
+    .card:hover .card_content {
+      transform: translateY(0);
+    }
+
+    .card:hover .card_description {
+      display: flex;
+      transition-delay: 0.25s;
+    }
+  }
+
+  .advert {
+    padding: 20px;
+    width: 100%;
+  }
+
+  // CURRENTLY OPENED SECTION
+  .OPEN {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+  }
+
+  .isopen {
+    display: flex;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    height: 150px;
+    line-height: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+
+    .isopen_content {
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      h4 {
+        color: #618c03;
+      }
+    }
+
+    img {
+      object-fit: cover;
+      width: 40%;
+    }
+  }
+
+  .nom {
+    display: none;
+  }
+  .show {
+    display: flex;
+  }
+
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search_restaurants {
+    position: absolute !important;
+    top: 40% !important;
+    left: 40% !important;
+    transform: translate(-40%, -40%) !important;
+  }
+
+  .menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  label {
+    display: inline-flex !important;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #toggler:checked ~ .menu {
+    max-height: 100%;
+  }
+
+  .card {
+    font-size: 0.3rem !important;
+
+    .card_content {
+      height: 10% !important;
+    }
+  }
+
+  .c {
+    height: 200px !important;
+  }
+
+  .advert {
+    height: 50px;
+  }
+
+  .OPEN {
+    display: flex !important;
+    flex-direction: column;
+  }
+}

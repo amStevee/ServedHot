@@ -42,24 +42,23 @@
     <title>Served Hot</title>
   </head>
   <body>
-    <nav class="navbar">
-      <a href="/" class="logo">Served Hot</a>
-      <input type="checkbox" id="toggler" />
-      <label for="toggler"><i class="fa-solid fa-bars"></i></label>
-      <div class="menu">
-        <ul class="list">
-          <li><a href="#top_rank">TOP RANK</a></li>
-          <li><a href="#currently_open">CURRENTLY OPEN</a></li>
-          <li><a href="#all_categories">ALL CATEGORIES</a></li>
-        </ul>
-      </div>
-    </nav>
     <div class="container">
+      <nav class="navbar">
+        <a href="#" class="logo">Served Hot</a>
+        <input type="checkbox" id="toggler" />
+        <label for="toggler"><i class="fa-solid fa-bars"></i></label>
+        <div class="menu">
+          <ul class="list">
+            <li><a href="#top_rank">TOP RANK</a></li>
+            <li><a href="#currently_open">CURRENTLY OPEN</a></li>
+            <li><a href="#all_categories">ALL CATEGORIES</a></li>
+          </ul>
+        </div>
+      </nav>
       <header>
         <div class="bg_img"></div>
         <div class="search_restaurants">
           <h3 id="searchError" style="color: yellow; display: none">
-            <h3 id="demo" style="color: yellow"></h3>
             Please enter a value
           </h3>
           <form class="search">
@@ -79,19 +78,19 @@
       </header>
 
       <!-- <div class="c">
-              <article class="card fade">
-                <img src="../image/header_background.jpg" alt="" />
-                <div class="card_content">
-                  <h3 class="card_title">GREEN POT</h3>
-                  <span class="card_subtitle">Address...</span>
-                  <p class="card_description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Aliquam sunt recusandae voluptatum facilis ipsam minus
-                    numquam dolores, quam tempore eveniet.
-                  </p>
-                </div>
-              </article>
-            </div> -->
+                <article class="card fade">
+                  <img src="../image/header_background.jpg" alt="" />
+                  <div class="card_content">
+                    <h3 class="card_title">GREEN POT</h3>
+                    <span class="card_subtitle">Address...</span>
+                    <p class="card_description">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Aliquam sunt recusandae voluptatum facilis ipsam minus
+                      numquam dolores, quam tempore eveniet.
+                    </p>
+                  </div>
+                </article>
+              </div> -->
       <main>
         <h2 id="top_rank">TOP</h2>
         <!-- class="top" id="top" -->
@@ -99,49 +98,32 @@
           <div class="slides" id="slides"></div>
         </section>
 
-        <section class="OPEN" id="OPEN">
-          <div class="advert"><p>Advert x</p></div>
+        <section class="currently_opened" id="currently_opened">
+          <div class="advert"><div class="ads"></div></div>
           <div class="right">
             <h2 id="currently_open">CURRENTLY OPEN</h2>
-            <div class="isopen">
-              <img src="../image/blur_background.jpg" alt="opened restaurant" />
-              <div class="isopen_content">
-                <h3>SANNDA</h3>
-                <p>Address: 16th jump street, Abuja</p>
-                <h4>OPEN</h4>
-              </div>
-            </div>
-            <div class="isopen">
-              <img src="../image/blur_background.jpg" alt="opened restaurant" />
-              <div class="isopen_content">
-                <h3>LEAF</h3>
-                <p>Address: 8080 leaf village street, Abuja</p>
-                <h4>OPEN</h4>
-              </div>
-            </div>
+            <div id="is_open fade"></div>
           </div>
         </section>
 
-        <section id="all_categories">
-          <h2 id="currently_open">ALL CATEGORIES</h2>
-          <div class="isopen">
-            <img src="../image/blur_background.jpg" alt="opened restaurant" />
-            <div class="isopen_content">
-              <h3>SANNDA</h3>
-              <p>Address: 16th jump street, Abuja</p>
-              <h4>OPEN</h4>
-            </div>
-          </div>
-          <div class="isopen">
-            <img src="../image/blur_background.jpg" alt="opened restaurant" />
-            <div class="isopen_content">
-              <h3>SANNDA</h3>
-              <p>Address: 16th jump street, Abuja</p>
-              <h4>OPEN</h4>
-            </div>
-          </div>
-        </section>
+        <section id="all_categories"></section>
       </main>
+
+      <footer class="footer">
+        <a href="/" class="logo">Served Hot</a>
+        <div class="socials">
+          <a href="https://instagram.com/am_stevee" target="_blank"
+            >Instagram</a
+          >
+          <a href="https://tweeter.com/am_stevenanongo" target="_blank"
+            >Tweeter</a
+          >
+          <a href="https://github.com/am_stevee" target="_blank">Github</a>
+        </div>
+        <div class="copyright">
+          <h5>&copy 2022,<a href="#">Steven .A. Anongo</a></h5>
+        </div>
+      </footer>
     </div>
     <script type="text/javascript" src="./bundle.js"></script>
   </body>

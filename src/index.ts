@@ -5,7 +5,11 @@ const slides = document.getElementById("slides") as HTMLDivElement | null,
   search_button = document.getElementById(
     "search_button"
   ) as HTMLButtonElement | null,
-  searchError = document.getElementById("searchError") as HTMLDivElement | null;
+  searchError = document.getElementById("searchError") as HTMLDivElement | null,
+  is_open = document.getElementById("is_open") as HTMLDivElement | null,
+  all_categories = document.getElementById(
+    "all_categories"
+  ) as HTMLDivElement | null;
 
 setCarouselDelay();
 
@@ -64,30 +68,73 @@ async function getLocation() {
               lang: "en_US",
             },
             headers: {
-              "X-RapidAPI-Key":
-                "8b548f0d36mshb24846c09cc0cfcp1edf30jsn199b6fc034a8",
+              "X-RapidAPI-Key": process.env.API_KEY2,
               "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
             },
           });
-          if (slides != undefined) {
+          if (
+            slides != undefined &&
+            is_open != undefined &&
+            all_categories != undefined
+          ) {
             slides.innerHTML = data
               .map(
-                (dta: any) => `<div class="c">
-              <article class="card fade">
-                <img src="${
-                  dta.photo?.images.large.url ||
-                  "../image/header_background.jpg"
-                }" alt="${dta.photo?.caption}" />
-                <div class="card_content">
-                  <h3 class="card_title">${dta.name || "x"}</h3>
-                  <span class="card_subtitle">${dta.address}</span>
-                  <p class="card_description">
-                    ${dta.description}
-                  </p>
-                  <a href="${dta.website}">WEBSITE</a>
-                </div>
-              </article>
-            </div>`
+                (dta: any) =>
+                  dta?.rating > 4.0 &&
+                  `<div class="c">
+                <article class="card fade">
+                  <img src="${
+                    dta.photo?.images.large.url ||
+                    "../image/undraw_Chef_cu0r.png"
+                  }" alt="${dta.photo?.caption}" />
+                  <div class="card_content">
+                    <h3 class="card_title">${dta.name || "x"}</h3>
+                    <span class="card_subtitle">${dta.address}</span>
+                    <p class="card_description">
+                      ${dta.description || "x"}
+                    </p>
+                    <a href="${dta.website}">WEBSITE</a>
+                  </div>
+                </article>
+              </div>`
+              )
+              .join("");
+
+            is_open.innerHTML = data
+              .map(
+                (dta: any) =>
+                  !dta.is_closed &&
+                  `
+          <div class="isopen" onclick="${dta.website}">
+            <img src="${
+              dta.photo?.images.large.url || "../image/undraw_Chef_cu0r.png"
+            }" alt="${dta.photo?.caption}" />
+            <div class="isopen_content">
+              <h3>${dta.name || "x"}</h3>
+              <p>${dta.address}</p>
+              <p class="desc">${dta.description || "x"}</p>
+              <h4>OPEN</h4>
+            </div>
+          </div>`
+              )
+              .join("");
+
+            all_categories.innerHTML = data
+              .map(
+                (dta: any) =>
+                  `
+          <h2 id="currently_open">ALL CATEGORIES</h2>
+          <div class="isopen" onclick="${dta.website}">
+            <img src="${
+              dta.photo?.images.large.url || "../image/undraw_Chef_cu0r.png"
+            }" alt="${dta.photo?.caption}" />
+            <div class="isopen_content">
+              <h3>${dta.name || "x"}</h3>
+              <p>${dta.address}</p>
+              <p class="desc">${dta.description || "x"}</p>
+              <h4>OPEN</h4>
+            </div>
+          </div>`
               )
               .join("");
             console.log(data);
@@ -131,30 +178,76 @@ function GetLatlong(address: string) {
               lang: "en_US",
             },
             headers: {
-              "X-RapidAPI-Key":
-                "8b548f0d36mshb24846c09cc0cfcp1edf30jsn199b6fc034a8",
+              "X-RapidAPI-Key": process.env.API_KEY2,
               "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
             },
           });
-          if (slides != undefined) {
+
+          if (
+            slides != undefined &&
+            is_open != undefined &&
+            all_categories != undefined
+          ) {
             slides.innerHTML = data
               .map(
-                (dta: any) => `<div class="c">
-              <article class="card fade">
-                <img src="${dta.photo.images.thumbnail.url}" alt="${
-                  dta.photo.caption
-                }" />
-                <div class="card_content">
-                  <h3 class="card_title">${dta.name || "x"}</h3>
-                  <span class="card_subtitle">Address: ${dta.address}</span>
-                  <p class="card_description">
-                    ${dta.description}
-                  </p>
-                </div>
-              </article>
-            </div>`
+                (dta: any) =>
+                  dta?.rating > 4.0 &&
+                  `<div class="c">
+                <article class="card fade">
+                  <img src="${
+                    dta.photo?.images.large.url ||
+                    "../image/undraw_Chef_cu0r.png"
+                  }" alt="${dta.photo?.caption}" />
+                  <div class="card_content">
+                    <h3 class="card_title">${dta.name || "x"}</h3>
+                    <span class="card_subtitle">${dta.address}</span>
+                    <p class="card_description">
+                      ${dta.description || "x"}
+                    </p>
+                    <a href="${dta.website}">WEBSITE</a>
+                  </div>
+                </article>
+              </div>`
               )
               .join("");
+
+            is_open.innerHTML = data
+              .map(
+                (dta: any) =>
+                  !dta.is_closed &&
+                  `
+          <div class="isopen" onclick="${dta.website}">
+            <img src="${
+              dta.photo?.images.large.url || "../image/undraw_Chef_cu0r.png"
+            }" alt="${dta.photo?.caption}" />
+            <div class="isopen_content">
+              <h3>${dta.name || "x"}</h3>
+              <p>${dta.address}</p>
+              <p class="desc">${dta.description || "x"}</p>
+              <h4>OPEN</h4>
+            </div>
+          </div>`
+              )
+              .join("");
+
+            all_categories.innerHTML = data
+              .map(
+                (dta: any) =>
+                  `
+          <div class="isopen" onclick="${dta.website}">
+            <img src="${
+              dta.photo?.images.large.url || "../image/undraw_Chef_cu0r.png"
+            }" alt="${dta.photo?.caption}" />
+            <div class="isopen_content">
+              <h3>${dta.name || "x"}</h3>
+              <p>${dta.address}</p>
+              <p class="desc">${dta.description || "x"}</p>
+              <h4>OPEN</h4>
+            </div>
+          </div>`
+              )
+              .join("");
+            console.log(data);
           }
         } catch (error) {
           throw error;
@@ -164,7 +257,7 @@ function GetLatlong(address: string) {
   );
 }
 
-// SEARCH RESTAURANTS AND FETCH DATA FROM API
+// PASSIN SEARCH VALUE TO GETLATLONG FUNCTION
 async function searchRestaurant(e: any) {
   e.preventDefault() as HTMLInputElement;
   const search_term = search?.value;

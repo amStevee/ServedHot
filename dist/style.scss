@@ -77,7 +77,7 @@ i {
 
 header {
   height: 70vh;
-  background-image: url("../image/clean_blur_background.png");
+  background-image: url("./image/clean_blur_background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -186,7 +186,7 @@ main {
       // background-size: cover;
       border-radius: 20px;
       overflow: hidden;
-      font-size: x-small;
+      font-size: small;
 
       img {
         object-fit: contain;
@@ -202,7 +202,7 @@ main {
       z-index: 3;
       width: 100%;
       height: 40%;
-      padding: 20px;
+      padding: 10px;
       background-color: #d92b04;
       border-top-left-radius: 20px;
       transform: translateY(10px);
@@ -211,7 +211,7 @@ main {
 
     .card_title {
       color: #fff;
-      line-height: 10px;
+      // line-height: 10px;
       z-index: 2;
     }
 
@@ -222,13 +222,13 @@ main {
     }
 
     .card_description {
-      font-size: 0.5;
+      font-size: 0.9;
       display: none;
       transition: opacity 0.5s;
       width: 100%;
       height: 5ch;
       text-align: justify;
-      overflow: hidden;
+      overflow: auto;
       white-space: wrap;
       text-overflow: ellipsis;
     }
@@ -247,7 +247,7 @@ main {
     padding: 20px;
     width: 100%;
     height: 400px;
-    background: url("/image/advert.png") center no-repeat;
+    background: url("./image/advert.png") center no-repeat;
     background-size: cover;
   }
 
@@ -264,26 +264,32 @@ main {
     margin-bottom: 15px;
     padding: 10px;
     border-radius: 5px;
-    height: 150px;
-    line-height: 10px;
+    height: 250px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    .desc {
+      height: 10ch;
+    }
 
     .isopen_content {
       padding: 6px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      font-size-adjust: 0.74;
+      gap: 6px;
+      font-size: 1rem;
       height: 140ch;
       overflow: hidden;
       white-space: wrap;
       text-overflow: ellipsis;
 
       p {
-        font-size: xx-small;
+        text-align: justify;
+        font-size: small;
       }
       h4 {
         color: #618c03;
+        margin-top: 38px;
       }
     }
 
@@ -375,21 +381,33 @@ footer {
 
   .advert {
     height: 50px !important;
-    background: url("/image/advert.png") center no-repeat;
+    background: url("./image/advert.png") center no-repeat;
     background-size: cover;
   }
 
+  .isopen {
+    height: 150px !important;
+  }
+
   .isopen_content {
+    p {
+      font-size: xx-small !important;
+    }
     h3 {
       justify-content: flex-start !important;
       line-height: 18px !important;
     }
+
+    h4 {
+      margin-top: 5px !important;
+    }
+
     .desc {
-      height: 5ch !important;
       text-align: justify;
       overflow: hidden;
       white-space: wrap;
       text-overflow: ellipsis;
+      height: 6ch !important;
     }
   }
 

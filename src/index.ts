@@ -174,8 +174,7 @@ function GetLatlong(address: string) {
               lang: "en_US",
             },
             headers: {
-              "X-RapidAPI-Key":
-                "8b548f0d36mshb24846c09cc0cfcp1edf30jsn199b6fc034a8",
+              "X-RapidAPI-Key": process.env.API_KEY2,
               "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
             },
           });

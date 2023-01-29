@@ -7,7 +7,7 @@ declare var process: {
   };
 };
 
-console.log(process.env)
+console.log(process.env);
 
 const slides = document.getElementById("slides") as HTMLDivElement | null,
   search = document.getElementById("search") as HTMLInputElement | null,
@@ -77,7 +77,7 @@ async function getLocation() {
               lang: "en_US",
             },
             headers: {
-              "X-RapidAPI-Key": process.env.API_KEY2,
+              "X-RapidAPI-Key": process.env.API_KEY,
               "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
             },
           });
@@ -182,7 +182,7 @@ function GetLatlong(address: string) {
               lang: "en_US",
             },
             headers: {
-              "X-RapidAPI-Key": process.env.API_KEY2,
+              "X-RapidAPI-Key": process.env.API_KEY,
               "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
             },
           });

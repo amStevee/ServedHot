@@ -486,7 +486,7 @@ footer .socials {
     background-size: cover;
   }
   .isopen {
-    height: 150px !important;
+    height: 170px !important;
   }
   .isopen_content p {
     font-size: xx-small !important;
@@ -498,14 +498,16 @@ footer .socials {
     line-height: 18px !important;
   }
   .isopen_content h4 {
-    margin-top: 5px !important;
+    margin-top: 1px !important;
   }
-  .isopen_content .desc {
-    text-align: justify;
+  .desc {
     overflow: hidden;
-    white-space: wrap;
+    max-height: 6rem;
+    line-height: 2.5rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
     text-overflow: ellipsis;
-    height: 6ch !important;
+    display: block;
   }
   .currently_opened {
     display: -webkit-box !important;

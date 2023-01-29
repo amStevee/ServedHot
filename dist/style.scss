@@ -407,7 +407,7 @@ footer {
   }
 
   .isopen {
-    height: 150px !important;
+    height: 170px !important;
   }
 
   .isopen_content {
@@ -420,16 +420,17 @@ footer {
     }
 
     h4 {
-      margin-top: 5px !important;
+      margin-top: 1px !important;
     }
-
-    .desc {
-      text-align: justify;
-      overflow: hidden;
-      white-space: wrap;
-      text-overflow: ellipsis;
-      height: 6ch !important;
-    }
+  }
+  .desc {
+    overflow: hidden;
+    max-height: 6rem;
+    line-height: 2.5rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    text-overflow: ellipsis;
+    display: block;
   }
 
   .currently_opened {

@@ -7,8 +7,6 @@ declare var process: {
   };
 };
 
-console.log(process.env.API_KEY2);
-
 const slides = document.getElementById("slides") as HTMLDivElement | null,
   search = document.getElementById("search") as HTMLInputElement | null,
   search_button = document.getElementById(
@@ -120,7 +118,7 @@ async function getLocation() {
                 <div class="isopen_content">
                   <h3>${dta.name || "x"}</h3>
                   <p>${dta.address}</p>
-                  <p class="desc">${dta.description || "x"}</p>
+                  <p class="desc">${dta.description || "..."}</p>
                 </div>
               </div></a>`
               )
@@ -136,7 +134,7 @@ async function getLocation() {
                 <div class="isopen_content">
                   <h3>${dta.name || "x"}</h3>
                   <p>${dta.address}</p>
-                  <p class="desc">${dta.description || "x"}</p>
+                  <p class="desc">${dta.description || "..."}</p>
                   <h4><a href="${dta.website}">more details..</a></h4>
                 </div>
               </div>`

@@ -7,7 +7,7 @@ declare var process: {
   };
 };
 
-console.log(process.env);
+console.log(process.env.API_KEY2);
 
 const slides = document.getElementById("slides") as HTMLDivElement | null,
   search = document.getElementById("search") as HTMLInputElement | null,
@@ -77,7 +77,8 @@ async function getLocation() {
               lang: "en_US",
             },
             headers: {
-              "X-RapidAPI-Key": process.env.API_KEY,
+              "X-RapidAPI-Key":
+                "8b548f0d36mshb24846c09cc0cfcp1edf30jsn199b6fc034a8", // Happy Hacking
               "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
             },
           });
@@ -182,7 +183,8 @@ function GetLatlong(address: string) {
               lang: "en_US",
             },
             headers: {
-              "X-RapidAPI-Key": process.env.API_KEY,
+              "X-RapidAPI-Key":
+                "8b548f0d36mshb24846c09cc0cfcp1edf30jsn199b6fc034a8", // Happy Hacking
               "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
             },
           });
@@ -206,7 +208,7 @@ function GetLatlong(address: string) {
                     <h3 class="card_title">${dta.name || "x"}</h3>
                     <span class="card_subtitle">${dta.address}</span>
                     <p class="card_description">
-                      ${dta.description || "x"}
+                      ${dta.description || "..."}
                     </p>
                     <a href="${dta.website}">WEBSITE</a>
                   </div>

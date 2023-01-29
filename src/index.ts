@@ -1,6 +1,12 @@
 // import "dotenv/config";
 import axios from "axios";
 
+declare var process: {
+  env: {
+    [key: string]: string;
+  };
+};
+
 const slides = document.getElementById("slides") as HTMLDivElement | null,
   search = document.getElementById("search") as HTMLInputElement | null,
   search_button = document.getElementById(

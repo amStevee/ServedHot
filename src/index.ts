@@ -7,6 +7,8 @@ declare var process: {
   };
 };
 
+console.log(process.env)
+
 const slides = document.getElementById("slides") as HTMLDivElement | null,
   search = document.getElementById("search") as HTMLInputElement | null,
   search_button = document.getElementById(
